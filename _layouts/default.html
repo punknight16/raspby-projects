@@ -5,10 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-<!--Googe Analytics and SEO here-->
-{% if jekyll.environment != 'development' %}
-{% include analytics.html %}
-{% endif %}
 {% seo %}
   </head>
 
@@ -28,7 +24,7 @@
           {% endif %}
           <a href="{{ site.github.repository_url }}" 
 		class="btn btn-github" 
-		onclick="ga('send', 'event', 'View on Github', 'click');">
+		onclick="captureOutboundLink('{{site.github.repository_url}}');return false;">
 		<span class="icon"></span>View on GitHub</a>
         </section>
       </div>
@@ -40,7 +36,7 @@
       </section>
     </div>
 
-    {% if site.google_analytics %}
+    {% if site.google_analytics  %}
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -49,6 +45,14 @@
         ga('create', '{{ site.google_analytics }}', 'auto');
         ga('send', 'pageview');
       </script>
+	<script>
+		var captureOutboundLink = (url)=>{
+			ga('send', 'event', 'outbound', 'click', url, {
+				'transport': 'beacon',
+				'hitCallback': function(){document.location = url;}
+			});
+		}
+	</script>
     {% endif %}
   </body>
 </html>

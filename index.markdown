@@ -67,7 +67,7 @@ For a theme, I looked at some gem themes after finding a Youtuber that had some 
 
 ### Tracking Hooks and Social Media
 
-After creating some content, the only way to get that content to people si to use hooks or ads on social media. These hooks or "click bait" lines are the only thing that convince people to click the link to the content that was posted. Some hooks work better than others, so keeping track of these hooks can provide valuable information on what works and what doesn't.
+After creating some content, the only way to get that content to people is to use hooks or ads on social media. These hooks or "click bait" lines are the only thing that convince people to click the link to the content that was posted. Some hooks work better than others, so keeping track of these hooks can provide valuable information on what works and what doesn't.
 
 Jekyll posts are written in a format called markdown. THe markdown format allows for metadata (called "front matter") to be stored at the top of a file. We can store the "hook" that is used for a post in the front matter of that post.
 
@@ -109,7 +109,7 @@ The last thing I need is hosting. Now, the cheapest way to host a blog would be 
 
 AWS has a command line utility that allows you to type a single command, and your local website gets uploaded to the cloud.
 
-`aws s3 sync --region=<region> <source-folder> s3://<destionation-bucket> --acl public-read`
+`aws s3 sync --region=<region> <source-folder> s3://<destination-bucket> --acl=public-read`
 
 One last problem with this solution, is it's not easy to host a domain on AWS without using their DNS called Route53. I'll give Route53 a try, and that should be it.
 
