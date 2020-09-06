@@ -8,22 +8,22 @@ layout: default
 
 ### Introduction
 
-One of the things that's really nice about getting a new computer, of any kind, is starting out with a clean slate. There are no poorly ogranized folders  in your home directory, and there are relatively few apps to clutter up your desktop.
+One of the things that's really nice about getting a new computer, of any kind, is starting out with a clean slate. There are no poorly organized folders  in your home directory, and there are relatively few apps to clutter up your desktop.
 
-Once I got my Reaspberry Pi up and running for the first time, I had a little trouble deciding what to do next. My first thought was to create a blog, so here we are. A blog is an excellent way to organize projects and publish the results. Before this Raspberry Pi, I was working on a Macbook Pro. All Macbook users can access the terminal, so these concepts apply whether you are using a Raspberry Pi or a Macbook.
+Once I got my Raspberry Pi up and running for the first time, I had a little trouble deciding what to do next. My first thought was to create a blog, so here we are. A blog is an excellent way to organize projects and publish the results. Before this Raspberry Pi, I was working on a Macbook Pro. All Macbook users can access the terminal, so these concepts apply whether you are using a Raspberry Pi or a Macbook.
 
-A Macbook has a lot of built-in software for creating content and for entertainment purposes, so my projects could quickly become disorganized, spread across multiple folders and online storage spaces. With this Raspberry Pi, I hope to have the entirety of a project stored in a single folder that can act as a single sourc e of truth for that project.
+A Macbook has a lot of built-in software for creating content and for entertainment purposes, so my projects could quickly become disorganized, spread across multiple folders and online storage spaces. With this Raspberry Pi, I hope to have the entirety of a project stored in a single folder that can act as a single source of truth for that project.
 
 ### Core Concepts
 
-The out of the box software that comes iwth a Raspberry Pi is a little less user firendly than on a Mac, so I want these projects to be really well researched and spec'ed out before I jump into them. For most of these projectts, I could probably just find a tutorial on how to code a parituclar solution, but I want to also think through the business-side of things. For example, is the project entirely automated or do I need to schedule one hour a week maitning the infrastructure? Will users be able to adopt using a new tool in their normal workflow or will they need to create a new workflow? And last but not least, when is it time to wind up the project?
+The out of the box software that comes with a Raspberry Pi is a little less user friendly than on a Mac, so I want these projects to be really well researched and spec'ed out before I jump into them. For most of these projects, I could probably just find a tutorial on how to code a particular solution, but I want to also think through the business-side of things. For example, is the project entirely automated or do I need to schedule one hour a week maintaining the infrastructure? Will users be able to adopt using a new tool in their normal workflow or will they need to create a new workflow? And last but not least, when is it time to wind up the project?
 
 For this blog, I've spent a little bit of time going through a "core concepts analysis" before starting. For the core concepts analysis, I wrote out everything that seems important for a blog, and then listed the potential value of each concept.
 
 Blog Concept | Potential Value | Total Value
 ---|---|---
 1. Content | 15% | 15%
-2. Posting Platoform | 4% | 19%
+2. Posting Platform | 4% | 19%
 3. Image Hosting | 1% | 20%
 4. Content Delivery Network (CDN) | 2% | 22%
 5. Analytics Toolset | 8% | 30%
@@ -54,9 +54,9 @@ So it looks like I can get about half my value from just 4 core concepts. This a
 
 ### Platform Research: Jekyll
 
-I have written a few blogs before, and this time I want to try Jekyll. Jekyll is a command line tool instead of a visual tool like Wordpress. I think long-term it might be easier to maintian than a Wordpress blog. I also like the idea of the site being completely persisted on my Raspberry Pi, and then mirrored into the cloud. This means I can close down the site, store it on GitHub, and upload it somewhere else with ease.
+I have written a few blogs before, and this time I want to try Jekyll. Jekyll is a command line tool instead of a visual tool like Wordpress. I think long-term it might be easier to maintain than a Wordpress blog. I also like the idea of the site being completely persisted on my Raspberry Pi, and then mirrored into the cloud. This means I can close down the site, store it on GitHub, and upload it somewhere else with ease.
 
-To download Jekyll on the Raspberry Pi, I went to the Ubuntu install docs and followed the steps. THen, I just followed the last three steps of the quick start guid. Here are the links:
+To download Jekyll on the Raspberry Pi, I went to the Ubuntu install docs and followed the steps. Then, I just followed the last three steps of the quick start guide. Here are the links:
 
 * [Install Jekyll on Linux](https://jekyllrb.com/docs/installation/ubuntu)
 * [Jekyll Quickstart Guide](https://jekyllrb.com/docs)
@@ -69,9 +69,9 @@ For a theme, I looked at some gem themes after finding a Youtuber that had some 
 
 After creating some content, the only way to get that content to people is to use hooks or ads on social media. These hooks or "click bait" lines are the only thing that convince people to click the link to the content that was posted. Some hooks work better than others, so keeping track of these hooks can provide valuable information on what works and what doesn't.
 
-Jekyll posts are written in a format called markdown. THe markdown format allows for metadata (called "front matter") to be stored at the top of a file. We can store the "hook" that is used for a post in the front matter of that post.
+Jekyll posts are written in a format called markdown. The markdown format allows for metadata (called "front matter") to be stored at the top of a file. We can store the "hook" that is used for a post in the front matter of that post.
 
-Next, even if the same hook is used in every forum and channel on social media, the click conversion rate for each social media site will still vary. To track the click conversion rate of each social media site, I'll add campaign parameters to the URL of the post for each different forum that I post in. Google Analytics comes iwth the ability to track referring sources, but you can also add three paramets to the end of your url to add additioanl data aobut your reference. They are: 
+Next, even if the same hook is used in every forum and channel on social media, the click conversion rate for each social media site will still vary. To track the click conversion rate of each social media site, I'll add campaign parameters to the URL of the post for each different forum that I post in. Google Analytics comes with the ability to track referring sources, but you can also add three parameters to the end of your url to add additional data about your reference. They are: 
 
 * utm_source
 * utm_media
@@ -102,7 +102,7 @@ The Raspberry Pi comes with Libre Spreadsheet software, but I think I'm going to
 
 ### Hosting
 
-The last thing I need is hosting. Now, the cheapest way to host a blog would be thorugh GitHub pages. I tried out GitHub Pages in preparation for this post, and it just seems like a more difficult experience than hosting with S3 Buckets. The AWS documentation is horrible, but once you figure it out,the tool is extremely powerful. I found a decent blog article on how to install the AWS CLI client and an AWS Live Coding video on hosting a Jekyll blog in an S3 bucket:
+The last thing I need is hosting. Now, the cheapest way to host a blog would be through GitHub pages. I tried out GitHub Pages in preparation for this post, and it just seems like a more difficult experience than hosting with S3 Buckets. The AWS documentation is horrible, but once you figure it out,the tool is extremely powerful. I found a decent blog article on how to install the AWS CLI client and an AWS Live Coding video on hosting a Jekyll blog in an S3 bucket:
 
 * [Blog on Installing AWS CLI on Raspberry Pi](https://iotbytes.wordpress.com/aws-iot-cli-on-raspberry-pi)
 * [Live Coding with AWS: Efficient Content Delivery](https://www.youtube.com/watch?v=CDLW9llfbn0)
@@ -113,4 +113,4 @@ AWS has a command line utility that allows you to type a single command, and you
 
 One last problem with this solution, is it's not easy to host a domain on AWS without using their DNS called Route53. I'll give Route53 a try, and that should be it.
 
-There is a lot of content here to digets, but this strategy is a maintainable, long-term solution for working on a blog with a group of other people. If you are interested in setting something like this up, feel free to subscribe, and I will reach out to you.
+There is a lot of content here to digest, but this strategy is a maintainable, long-term solution for working on a blog with a group of other people. If you are interested in setting something like this up, feel free to subscribe, and I will reach out to you.
