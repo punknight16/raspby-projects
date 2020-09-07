@@ -1,10 +1,13 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: default
+utm_urls:
+- http://example.com?utm-source=fwd-discord
+- http://example.com?utm-source=kya-slack
+- http://example.com?utm-source=gatech-gchat
+- http://example.com?utm-source=hackernews
+hook: "Hey all! I'm releasing an article on how to create a Jekyll blog using a Raspberry Pi today. If anyone wants to contribute articles or work on a project together in the future, I think this could be a good place to start."
 ---
-# Getting started with a Jekyll Blog
+# Creating a Blog with Jekyll-S3-GoogleAnalytics on a Raspberry Pi
 
 ### Introduction
 
@@ -41,7 +44,7 @@ Blog Concept | Potential Value | Total Value
 17. Hooks/Social Media | 12% | 99%
 18. A/B Testing | 1% | 100%
 
-Attacking all fo these concepts at once seems like a fairly difficult task, so I narrowed my work down to just the most valuable concepts:
+Attacking all of these concepts at once seems like a fairly difficult task, so I narrowed my work down to just the most valuable concepts:
 
 Blog Concept | Percentage Value | Total Value
 ---|---|---
@@ -114,3 +117,37 @@ AWS has a command line utility that allows you to type a single command, and you
 One last problem with this solution, is it's not easy to host a domain on AWS without using their DNS called Route53. I'll give Route53 a try, and that should be it.
 
 There is a lot of content here to digest, but this strategy is a maintainable, long-term solution for working on a blog with a group of other people. If you are interested in setting something like this up, feel free to subscribe, and I will reach out to you.
+
+### Usage Report
+
+I released this article yesterday to a few slack channels that I have with friends and I'd like to quickly go over what I learned from them. I can roughly break down the information into two categories:
+
+* direct feedback
+* indirect feedback
+
+Direct feedback is just persisting what people said about the about the post. To keep their privacy, I will refer to them as A, B, C, and so on. Indirect feedback is information I can  surmise from the Google Analytics data.
+
+### Person A
+Person A liked the theme, wanted a real domain, and suggested that I use spell check. I'll build a real homepage and get a domain this week, so that feedback can be quickly fixed. The spell check problem is a little more interesting.
+
+I'm using markdown files as my writing medium which means I am not using a text editor. Luckily the Raspberry Pi comes with a spell check command line tool called aspell. So I will add the following helpful command to my publishing process:
+
+`aspell -c <filename.md>`
+
+After using this tool, it updates the current file, and generates a .bak file as a backup. Because I'm using git, .bak file is not necessary, so the backup file will need to be deleted each time I use the utility.
+
+### Person B
+
+Person B was more interested in talking about their own blog, but I think there is some valuable information still their. I originally though that bloggers might be interested working on a blog together, but it seems that a lot of people have their own blog already. A simple activity feed feature on the homepage of this site will allow readers to contribute to this blog while still maintaining the ownership over their own blog. 
+
+### Indirect Feedback
+
+On September 6, 2020, the post received 33 unique page views among my friends and a 90.91% bounce rate. This means that 3 people took the time to read the article. I attribute the low 33 unique page views number to not an interesting enough title. The high bounce rate I attribute to not providing a demo. Most people want to see the final product, not the steps required to make a product.
+
+To fix these problems, I'm going to:
+
+[ ] change title: "Creating a Blog using Jekyll-S3-GoogleAnalytics on a Raspberry Pi
+[ ] add a demo video
+[ ] create a homepage with an RSS activity feed
+[ ] run aspell on every post
+[ ] add a domain name to the site
