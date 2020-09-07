@@ -7,8 +7,10 @@ utm_urls:
 - http://example.com?utm-source=hackernews
 hook: "Hey all! I'm releasing an article on how to create a Jekyll blog using a Raspberry Pi today. If anyone wants to contribute articles or work on a project together in the future, I think this could be a good place to start."
 ---
-# Creating a Blog with Jekyll-S3-GoogleAnalytics on a Raspberry Pi
+# Creating a Blog using a Raspberry Pi
+*(Jekyll-s3-GoogleAnalytics Stack)*
 
+<div style="display: flex; justify-content: center"><iframe width="560" height="315" src="https://www.youtube.com/embed/LHknoVIriqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 ### Introduction
 
 One of the things that's really nice about getting a new computer, of any kind, is starting out with a clean slate. There are no poorly organized folders  in your home directory, and there are relatively few apps to clutter up your desktop.
@@ -142,12 +144,12 @@ Person B was more interested in talking about their own blog, but I think there 
 
 ### Indirect Feedback
 
-On September 6, 2020, the post received 33 unique page views among my friends and a 90.91% bounce rate. This means that 3 people took the time to read the article. I attribute the low 33 unique page views number to not an interesting enough title. The high bounce rate I attribute to not providing a demo. Most people want to see the final product, not the steps required to make a product.
+On September 6, 2020, the post received 33 unique page views among my friends and a 90.91% bounce rate. This means that Google Analytics received more than one event from 3 people. I attribute the low 33 unique page views number to not an interesting enough title. The high bounce rate can be explained by the entire website being only a single page. Google analytics can only measure time between events, so a single view and then leaving is registered as a bounce. I can solve this by merely giving more places in the site to explore.
 
-To fix these problems, I'm going to:
+In response to the feedback given, I'm going to:
 
-[ ] change title: "Creating a Blog using Jekyll-S3-GoogleAnalytics on a Raspberry Pi
-[ ] add a demo video
-[ ] create a homepage with an RSS activity feed
-[ ] run aspell on every post
-[ ] add a domain name to the site
+* [x] change title: "Creating a Blog using Jekyll-S3-GoogleAnalytics on a Raspberry Pi
+* [x] add a demo video
+* [ ] create a homepage with an RSS activity feed
+* [x] run aspell on every post
+* [x] add a domain name to the site
