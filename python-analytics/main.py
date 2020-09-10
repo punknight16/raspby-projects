@@ -1,19 +1,28 @@
-from time import sleep
-
-print("This is my file to demonstrate best practices.")
-
-def process_data(data):
-	print("Beginning data processing...")
-	modified_data = data + " that has been modified"
-	sleep(3)
-	print("Data processing finished.")
-	return modified_data
+#import extract
+import load
+import transform
+import plot
 
 def main():
-	data = "My data read from the Web"
-	print(data)
-	modified_data = process_data(data)
-	print(modified_data)
+	print("ran extract")
+	data = load.getFromFile()
+	print("ran load")
+	#print(data)
+	df = transform.createDataFrame(data)
+	#print(df.to_string())
+	#for col in df.columns:
+	#	print(col)
+	#print(df.size)
+	#print(df.shape)
+	df1 = transform.getDateTime(df, "date")
+	#for col in df1.columns:
+	#	print(col)
+	df2 = transform.getUniquePageviewsByWeek(df1, "datetime")
+	#df3 = transform.getProjection(df2, ["date", "uniquePageviews"])
+	print(type(df2))
+	print(df2.tail(1))
+	#plot.createFunnel(stages_arr, numbers_arr)
 
 if __name__ == "__main__":
+	
 	main()
