@@ -1,27 +1,40 @@
-#import extract
+from time import sleep
+import extract
+import inquirer
 import load
 import transform
 import plot
 
 def main():
-	print("ran extract")
+	print("running extract function...")
+	sleep(1)
+	print("extract complete")
+	year = inquirer.getYear()
+	week = inquirer.getWeek()
+	print("year:", year, "week:", week)
+	print("running load function...")
 	data = load.getFromFile()
-	print("ran load")
-	#print(data)
+	print("load complete")
+	print("running transform functions...")
+	print("creating dataframe...")
 	df = transform.createDataFrame(data)
-	#print(df.to_string())
-	#for col in df.columns:
-	#	print(col)
-	#print(df.size)
-	#print(df.shape)
-	df1 = transform.getDateTime(df, "date")
-	#for col in df1.columns:
-	#	print(col)
-	df2 = transform.getUniquePageviewsByWeek(df1, "datetime")
-	#df3 = transform.getProjection(df2, ["date", "uniquePageviews"])
-	print(type(df2))
-	print(df2.tail(1))
-	#plot.createFunnel(stages_arr, numbers_arr)
+	print("adding a datetime column...")
+	df1 = transform.addDateTime(df, "date")
+	print("filter datetime by week year")
+	df2 = transform.filterByWeekAndYear(df1, "datetime", year, week)
+	print("adding a non-bounced session column")
+	df3 = transform.addNonBouncedSessions(df2, "sessions", "bounceRate")
+	print("getting projection of only useful columns")
+	df4 = transform.getProjection(df3, ["datetime", "uniquePageviews", "nonbouncedSessions", "uniqueEvents"])
+	print("sum [columns] groupby week")
+	df5 = transform.getSumGroupByWeek(df4, "datetime")
+	#transform.displayDataFrame(df5)
+	print("list [values of columns]")
+	list_of_values = transform.getListOfValues(df5, ["uniquePageviews", "nonbouncedSessions", "uniqueEvents"])
+	print("creating funnel plot")
+	fig = plot.createFunnel(["uniquePageviews", "nonbouncedSessions", "uniqueEvents"], list_of_values)
+	print("exporting funnel plot to file")
+	plot.exportFunnel(fig, year, week, "report.html")
 
 if __name__ == "__main__":
 	

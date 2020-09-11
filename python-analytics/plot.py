@@ -1,8 +1,14 @@
 import plotly.express as px
 
-def createFunnel():
+def createFunnel(stage, number):
 	data = dict(
-		number=[41, 12, 2],
-		stage=["Unique Page Views", "Non-bounced Sessions", "Conversion Events"])
+		number=number,
+		stage=stage)
 	fig = px.funnel(data, x='number', y='stage')
-	fig.write_html("plot.html")
+	#fig.show()
+	return fig
+    
+def exportFunnel(fig, year, week, filename):
+	fullname = str(year)+"-"+str(week)+"_"+filename
+	fig.write_html(fullname)
+	return
