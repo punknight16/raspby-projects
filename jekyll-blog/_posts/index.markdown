@@ -142,6 +142,10 @@ After using this tool, it updates the current file, and generates a .bak file as
 
 Person B was more interested in talking about their own blog, but I think there is some valuable information still their. I originally though that bloggers might be interested working on a blog together, but it seems that a lot of people have their own blog already. A simple activity feed feature on the homepage of this site will allow readers to contribute to this blog while still maintaining the ownership over their own blog. 
 
+### Person C
+
+Person C liked how I analyzed the whole process before jumping right into coding. I'm defintely going to keep this format going. It not only makes the post more readable, but it makes the coding easier too. Person C also suggested using Netifly for hosting as a more automated platform for jekyll deployment. I will keep this service in the back of my mind for now, and see if more developers suggest it in the future.
+
 ### Indirect Feedback
 
 On September 6, 2020, the post received 33 unique page views among my friends and a 90.91% bounce rate. This means that Google Analytics received more than one event from 3 people. I attribute the low 33 unique page views number to not an interesting enough title. The high bounce rate can be explained by the entire website being only a single page. Google analytics can only measure time between events, so a single view and then leaving is registered as a bounce. I can solve this by merely giving more places in the site to explore.
