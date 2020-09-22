@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<ol>
+{% for link in site.data.links %}
+ <li>
+	<a href="{{link}}">{{link}}</a>
+</li>
+{% endfor %}
+</ol>

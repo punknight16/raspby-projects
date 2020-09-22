@@ -23,7 +23,8 @@ email: punknight16@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Hey Everyone! I just got a Raspberry Pi, and my first thought was to use it to show people how to boost their home business by creating a Jekyll blog. I've been wanting to start a blog on reviewing white papers and implementing small open source projects for a while. Using the Raspberry Pi as a lens to focus this idea seems like as good a starting place as any. For those interested in getting involved, here is the git repo:
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://raspbyprojects.com" # the base hostname & protocol for your site, e.g. http://example.com
+absolute_url: "https://raspbyprojects.com"
 twitter_username: punknight16
 #GitHub services
 github_username:  punknight16
